@@ -1,0 +1,72 @@
+@import "/src/scss/default_variables.scss";
+
+.header {
+  background: $bg_primary;
+  display: grid;
+  grid-template-rows: 116px;
+  grid-template-columns: 0.65fr 128px 1fr 372px 1fr 121px 0.65fr;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  @include del_indents;
+  align-items: center;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  @include del_indents;
+}
+.item {
+  cursor: pointer;
+  @include anchor_clean($text_primary);
+}
+.title {
+  grid-column: 2 / 3;
+  font-size: 24px;
+  @include font_mserrat;
+  font-weight: 700;
+  color: $text_active;
+  @include del_indents;
+}
+.navigation {
+  grid-column: 4 / 5;
+  font-size: 10px;
+  @include font_mserrat;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $text_primary;
+}
+.interface {
+  grid-area:   1 / 6 / 1 / 7;
+}
+.counter {
+  background: #FF353A;
+  border-radius: 13px;
+  height: 13px;
+  width: 13px;
+  grid-area: 1 / 6 / 1 / 7;
+  justify-self: end;
+  position: relative;
+  top: 4px;
+  left: 3px;
+  font-size: 10px;
+  @include font_mserrat;
+  color: $bg_primary;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: none;
+  cursor: pointer;
+  &.activeCounter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:hover {
+    transform: translate(10px, 10px) scale(2.5);
+    transition: ease 0.8s;
+  }
+}
+.bag {
+}

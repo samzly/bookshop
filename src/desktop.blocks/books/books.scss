@@ -1,0 +1,213 @@
+@import "/src/scss/default_variables.scss";
+
+.container {
+  display: flex;
+}
+.ratings {
+  color: $text_primary;
+  font-size: 10px;
+  @include font_opensans;
+}
+.item {
+  font-size: 12px;
+  @include font_mserrat;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: $text_primary;
+  cursor: pointer;
+  margin-bottom: 23px;
+}
+.categories {
+  width: 416px;
+  height: 710px;
+  background: #EFEEF6;
+  position: sticky;
+  top: 116px;
+}
+.active {
+  color: $text_active;
+  font-size: 16px;
+  font-weight: 700;
+  list-style-type: disc;
+}
+.list {
+  padding: 45px 0 0 138px;
+  @include anchor_clean($text_primary);
+  @media screen and (max-width: 1235px) {
+    padding-left: 40px;
+  }
+}
+.books {
+  width: 920px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  left: -60px;
+  top: 50px;
+  @media screen and (max-width: 1235px) {
+    left: -20px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+.book {
+  width: 424px;
+  height: 300px;
+  margin-bottom: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  @media screen and (max-width: 1235px) {
+    margin-bottom: 40px;
+  }
+}
+.image {
+  width: 212px;
+  height: 300px;
+  background-size: cover;
+}
+.text {
+  width: 212px;
+  padding: 60px 0 60px 36px;
+}
+.description {
+  white-space: break-spaces;
+  height: 30px;
+  text-overflow: ellipsis;
+  color: $text_primary;
+  font-size: 10px;
+  @include font_opensans;
+  text-transform: capitalize;
+}
+
+.button {
+  width: 176px;
+  height: 45px;
+  padding: 0;
+  border: 1px solid $button;
+  color: $button;
+  background: none;
+  font-size: 8px;
+  @include font_mserrat;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.button_buy {
+  cursor: pointer;
+  &.activeButton {
+    color: $text_primary;
+    border-color: $text_primary;
+  }
+}
+.buttonLoad {
+  position: relative;
+  left: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 1235px) {
+    left: -80px;
+  }
+}
+
+.authors {
+  font-size: 10px;
+  @include font_opensans;
+  text-transform: capitalize;
+  color: $text_primary;
+}
+.title {
+  color: $text_active;
+  font-size: 16px;
+  @include font_mserrat;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 4px 0 0;
+}
+.price {
+  color: $text_active;
+  font-size: 13px;
+  @include font_mserrat;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 16px;
+  height: 16px;
+}
+
+$stars-settings: (
+        'font-size': 12px,
+        'color': #F2C94C,
+        'unset-color': #c3c3c3
+);
+
+$icon: (
+        'star': "\f005",
+        'star-o': "\f006"
+);
+
+%icon {
+  font: {
+    family: FontAwesome;
+    weight: normal;
+    style: normal;
+  }
+  display: inline-block;
+  text-decoration: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+@mixin icon($icon) {
+  &::before {
+    @extend %icon;
+    content: $icon;
+  }
+}
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+.wrap {
+  display: inline-block;
+  height: 12px;
+  padding: 0;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.stars {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 0;
+    display: inline-block;
+    font-size: map-get($stars-settings, 'font-size');
+    color: map-get($stars-settings, 'unset-color');
+    @include icon( map-get($icon, 'star-o') );
+    &.activeRating,
+    &.activeRating ~ li {
+      color: map-get($stars-settings, 'color');
+      @include icon( map-get($icon, 'star') );
+    }
+  }
+}
+
+.count {
+  display: none;
+}

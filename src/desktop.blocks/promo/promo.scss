@@ -1,0 +1,42 @@
+@import "/src/scss/default_variables.scss";
+
+.promo1, .promo2 {
+  @include font_mserrat;
+  color: $text_active;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 0 0 20px;
+  position: relative;
+  box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.2);
+}
+.promo1 {
+  width: 149px;
+  height: 204px;
+  background: #9E98DC;
+  top: -652px;
+  left: 646px;
+}
+.promo2 {
+  width: 137px;
+  height: 273px;
+  background: #FF8FE6;
+  top: -366px;
+  left: 583px;
+}
+.anchor {
+  @include anchor_clean($text_active);
+}
+.arrow {
+  width: 55px;
+  height: 12px;
+  margin: 4px 0 20px 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

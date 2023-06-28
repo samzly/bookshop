@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dots {
+  width: 56px;
+  height: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin: 17px 0 0;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  background: #EFEEF6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 1s;
+}
+.images {
+  width: 1120px;
+  height: 702px;
+}
+.image {
+  width: 1120px;
+  height: 702px;
+  position: absolute;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.active {
+  opacity: 1;
+  background: #9E98DC;
+}
+
+.slider {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+}

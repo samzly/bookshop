@@ -1,0 +1,22 @@
+[
+  {
+    "city": ["Rostov-on-Don",
+      "LCD admiral"],
+    "area": "81 m<sup>2</sup>",
+    "time": "3.5 months",
+    "img": "/images/rostov-admiral.jpg"
+  },
+  {
+    "city": ["Sochi",
+      "Thieves"],
+    "area": "105 m<sup>2</sup>",
+    "time": "4 months",
+    "img": "/images/sochi-thieves.jpg"
+  },
+  {
+    "city": ["Rostov-on-Don",
+      "Patriotic"],
+    "area": "93 m<sup>2</sup>",
+    "time": "3 months",
+    "img": "/images/rostov-patriotic.jpg"
+]
